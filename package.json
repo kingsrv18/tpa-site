@@ -1,0 +1,11 @@
+{
+  "name": "tpa-community-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check public/app.js && node --check scripts/server.mjs && node --check scripts/build.mjs"
+  }
+}

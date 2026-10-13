@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#245D5B">
+  <meta name="description" content="A professional community for chartered accountants in Tollygunge, Kolkata. Connect with peers, discover events and explore membership at TPA.">
+  <title>Tollygunge Professional Association | Community & Events</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/jakarta-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/atlas.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header container">
+    <nav class="nav-group nav-start" aria-label="Main navigation">
+      <a href="#association">Our association</a><a href="#membership">Membership</a><a href="#events">Events & learning</a>
+    </nav>
+    <a class="wordmark" href="#" aria-label="Tollygunge Professional Association home"><span class="wordmark-name">TPA</span><span class="wordmark-full">Tollygunge Professional Association</span></a>
+    <nav class="nav-group nav-end" aria-label="Member navigation"><a href="#resources">Resources</a><a href="https://tpassociation.org/login">Member login</a><a class="button button-small" href="#membership">Join TPA</a></nav>
+    <button class="menu-toggle" type="button" aria-controls="mobile-navigation" aria-expanded="false"><span class="menu-icon" aria-hidden="true"><span></span><span></span></span><span class="menu-label">Menu</span></button>
+    <nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile navigation" hidden>
+      <a href="#association">Our association</a><a href="#membership">Membership</a><a href="#events">Events & learning</a><a href="#resources">Resources</a><a href="#contact">Contact</a><a href="https://tpassociation.org/login">Member login</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title"><span>Good People.</span><span>Shared Knowledge.</span><span>Greater Possibilities.</span></h1>
+          <p>A professional community for chartered accountants in Tollygunge, Kolkata. Learn from one another, build lasting connections and grow together.</p>
+          <div class="actions"><a class="button" href="#membership">Become a member</a><a class="text-link" href="#events">Explore upcoming events</a></div>
+        </div>
+        <figure class="hero-illustration"><img src="/assets/kolkata-watercolor.webp" alt="A faded watercolor of Kolkata's Howrah Bridge, Victoria Memorial and a heritage tram, blending into books, an open notebook, notes and a fountain pen" width="1254" height="1254" fetchpriority="high"></figure>
+      </div>
+    </section>
+    <section class="association container" id="association" aria-labelledby="association-title">
+      <div class="association-intro"><h2 id="association-title">Connect with people.<br>Make room for new ideas.</h2><a href="https://tpassociation.org/about" class="plain-link">Get to know our association <span aria-hidden="true">↗</span></a></div>
+      <div class="association-description"><p>TPA is a shared space for professional learning, meaningful relationships and community participation. Rooted in Tollygunge, open to new perspectives.</p><div class="association-links"><a class="text-link" href="https://tpassociation.org/about#section-0">About TPA</a><a href="https://tpassociation.org/about#section-1">Vision & mission</a><a href="https://tpassociation.org/governance">Governance</a></div></div>
+    </section>
+    <section class="city-atlas" id="our-city" aria-labelledby="atlas-title">
+      <div class="container atlas-layout">
+        <div class="atlas-copy">
+          <h2 id="atlas-title">Rooted In Kolkata.<br>Open To Knowledge.</h2>
+          <p>A city of conversations. A profession built on learning. Our community brings those two worlds together in Tollygunge.</p>
+          <p class="atlas-detail">Open the atlas, turn a page and discover the ideas that connect us.</p>
+          <button class="text-link" type="button" id="locate-tollygunge">Find Tollygunge on the map</button>
+        </div>
+        <div class="atlas-experience">
+          <div class="atlas-book" id="atlas-book" data-open="false" aria-label="Interactive Kolkata community atlas">
+            <button class="book-cover" id="open-book" type="button" aria-label="Open the TPA Kolkata atlas" aria-expanded="false" aria-controls="atlas-spread">
+              <span class="cover-imprint">Tollygunge Professional Association</span>
+              <span class="cover-title">Welcome<br>to TPA</span>
+              <span class="cover-seal" role="img" aria-label="TPA monogram">TPA</span>
+              <span class="cover-footer"><span>A community of knowledge.</span><span class="cover-invitation">Click to open</span></span>
+            </button>
+            <div class="book-spread" id="atlas-spread" hidden>
+              <div class="book-leaf book-text-page">
+                <span class="book-imprint">The TPA atlas</span>
+                <div class="book-chapter" aria-live="polite" aria-atomic="true">
+                  <h3 id="book-chapter-title">A City Of Ideas.</h3>
+                  <p id="book-chapter-text">Kolkata is our shared setting. Tollygunge is where our community comes together, with room for new perspectives and lasting connections.</p>
+                </div>
+                <div class="book-page-footer"><span id="book-page-number">Chapter 1 of 3</span><span class="book-gold-rule" aria-hidden="true"></span></div>
+              </div>
+              <div class="book-leaf book-map-page">
+                <div class="map-page-heading"><h3 id="book-image-heading">Kolkata</h3><span class="map-north" id="book-map-north" aria-label="North is up" hidden>N<span aria-hidden="true"></span></span></div>
+                <div class="book-art-area">
+                <div class="book-map book-image-panel" id="book-map" data-book-image="map" data-focused="false">
+                  <div class="map-layer">
+                    <img src="/assets/kolkata-map.svg" alt="Geographic outline of Kolkata, with north at the top" width="440" height="460" loading="lazy">
+                    <button class="map-marker" id="tollygunge-marker" type="button" aria-label="Highlight Tollygunge, South Kolkata" aria-pressed="false" style="--pin-x:47.9886%;--pin-y:63.8971%"><span class="map-pin" aria-hidden="true"></span><span class="map-marker-label">Tollygunge</span></button>
+                  </div>
+                </div>
+                <figure class="book-image-panel" data-book-image="community" hidden><img src="/assets/book-community-watercolor.webp" alt="A faint watercolor group portrait of Indian professionals standing together in formal attire" width="1000" height="1000" loading="lazy"></figure>
+                <figure class="book-image-panel" data-book-image="knowledge" hidden><img src="/assets/book-knowledge-watercolor.webp" alt="A faded watercolor still life of cloth-bound books, an open book, a notebook, paper notes, reading glasses and a fountain pen" width="1000" height="1000" loading="lazy"></figure>
+                </div>
+                <p class="map-page-note" id="book-image-caption">Our community’s home in South Kolkata.</p>
+              </div>
+            </div>
+            <div class="page-turn-sheet" aria-hidden="true"></div>
+          </div>
+          <div class="atlas-controls"><p id="atlas-message" aria-live="polite">A little local knowledge, one page at a time. Click the cover to begin.</p><div class="book-navigation" id="book-navigation" hidden><button id="close-book" class="close-book" type="button">Close book</button><button id="previous-chapter" type="button" aria-label="Previous book chapter" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button id="next-chapter" type="button" aria-label="Next book chapter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></div>
+          <div class="atlas-credit" id="atlas-credit" hidden><span>City outline; not a street map.</span><a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a></div>
+          <noscript><p class="atlas-credit">Enable JavaScript to open the book, or <a href="https://www.openstreetmap.org/node/1350661689">view Tollygunge on OpenStreetMap</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+    <section class="events section" id="events" aria-labelledby="events-title">
+      <div class="container">
+        <div class="section-heading"><div><h2 id="events-title">Our Next Conversation Starts Here.</h2><p>Knowledge sessions, workshops and moments of fellowship.</p></div><a class="text-link" href="https://tpassociation.org/events">Browse all events</a></div>
+        <div class="event-layout">
+          <article class="featured-event"><p class="event-category">Knowledge session</p><h3>GST In Practice.<br>Perspectives Worth Sharing.</h3><p class="event-description">A sample programme for focused learning and practical discussion among professional peers.</p><div class="event-footer"><p>Date & venue to be confirmed<br>In-person session</p><button class="button" type="button" data-event="gst">View & register</button></div></article>
+          <div class="event-list">
+            <article class="event-row"><h3>Audit & Assurance Roundtable</h3><p>A sample session for comparing perspectives and discussing practice.</p><div class="event-footer"><p>Date to be announced</p><button class="text-link" type="button" data-event="audit">Event details</button></div></article>
+            <article class="event-row"><h3>An Evening With The Community</h3><p>A sample fellowship gathering to reconnect and welcome new members.</p><div class="event-footer"><p>Date to be announced</p><button class="text-link" type="button" data-event="fellowship">Event details</button></div></article>
+          </div>
+        </div>
+        <p class="concept-note">Programme topics are illustrative. TPA will confirm final dates, venues and registration details.</p>
+      </div>
+    </section>
+    <section class="membership section" id="membership" aria-labelledby="membership-title">
+      <div class="container membership-grid">
+        <div class="membership-copy"><h2 id="membership-title">Your Next Chapter<br>Starts With TPA.</h2><p>Bring your experience, curiosity and perspective. Find a place to connect with professional peers and contribute to the association.</p><div class="membership-links"><a class="text-link" href="https://tpassociation.org/membership#section-1">Explore membership plans</a><a href="https://tpassociation.org/membership#section-2">Renew your membership</a></div><p class="membership-help">Questions about eligibility or fees?<br><a href="https://tpassociation.org/contact">Contact the secretariat</a> for current membership details.</p></div>
+        <div class="membership-form-wrap">
+          <form id="membership-form" class="membership-form" novalidate>
+            <div class="form-intro"><h3>Begin Your Membership.</h3><p>Start with your contact details. Professional details follow.</p></div>
+            <div class="form-field"><label for="member-name">Full name</label><input id="member-name" name="name" type="text" placeholder="Your full name" autocomplete="name" required minlength="2" maxlength="100" aria-describedby="name-error"><p class="field-error" id="name-error" hidden></p></div>
+            <div class="form-field"><label for="member-email">Email address</label><input id="member-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required maxlength="254" aria-describedby="email-error"><p class="field-error" id="email-error" hidden></p></div>
+            <div class="form-actions"><button class="button" type="submit">Continue registration</button><a href="https://tpassociation.org/login">Already a member? Log in</a></div>
+            <p class="form-note">Membership terms will be confirmed by the association. You’ll complete your application on the current TPA portal.</p>
+          </form>
+          <section id="registration-handoff" class="registration-handoff" hidden aria-labelledby="handoff-title" tabindex="-1"><h3 id="handoff-title">Your Next Step.</h3><p>Continue your membership application on TPA’s current portal.</p><dl><div><dt>Full name</dt><dd id="review-name"></dd></div><div><dt>Email</dt><dd id="review-email"></dd></div></dl><p class="form-note">Your details have not been submitted or transferred. The TPA portal will ask for the information required for your application.</p><div class="actions"><a class="button" href="https://tpassociation.org/join">Continue on TPA portal</a><button class="text-link" id="edit-registration" type="button">Edit details</button></div></section>
+        </div>
+      </div>
+    </section>
+    <section class="resources section" id="resources" aria-labelledby="resources-title"><div class="container resources-grid"><div><h2 id="resources-title">Knowledge Is Better<br>When It Is Shared.</h2><p>Find professional insights, association updates and useful resources in one place.</p></div><div class="resource-list"><a href="https://tpassociation.org/resources#section-0"><span>Insights & perspectives</span><span class="resource-action">Read insights <span aria-hidden="true">↗</span></span></a><a href="https://tpassociation.org/resources#section-2"><span>Documents & downloads</span><span class="resource-action">View resources <span aria-hidden="true">↗</span></span></a><a href="https://tpassociation.org/resources#section-3"><span>Important professional links</span><span class="resource-action">Explore links <span aria-hidden="true">↗</span></span></a></div></div></section>
+    <section class="contact container" id="contact" aria-labelledby="contact-title"><div><h2 id="contact-title">Let’s Start A Conversation.</h2><p>Membership, events or a professional collaboration.<br>Tell us what you have in mind.</p></div><div class="contact-action"><a class="button" href="https://tpassociation.org/contact">Contact the secretariat</a><p>Tollygunge, Kolkata, India</p></div></section>
+  </main>
+  <footer class="site-footer container"><div class="footer-brand"><p>Tollygunge Professional Association</p><p>Connect. Learn. Collaborate. Grow. Contribute.</p><p class="concept-note">Design preview. Programme content is illustrative.</p></div><nav aria-label="Association links"><a href="https://tpassociation.org/about">Our association</a><a href="https://tpassociation.org/governance#section-0">Governance & committees</a><a href="https://tpassociation.org/governance#section-2">Constitution & bye-laws</a></nav><nav aria-label="Membership links"><a href="https://tpassociation.org/membership">Membership & renewal</a><a href="https://tpassociation.org/events#section-1">Past events</a><a href="https://tpassociation.org/contact">Contact TPA</a></nav></footer>
+  <dialog id="event-dialog" aria-labelledby="event-dialog-title" aria-describedby="event-dialog-description"><div class="dialog-content"><button class="dialog-close" type="button" aria-label="Close event details">×</button><p class="event-category" id="event-dialog-category"></p><h2 id="event-dialog-title"></h2><p id="event-dialog-description"></p><dl class="event-facts"><div><dt>Date</dt><dd>To be announced</dd></div><div><dt>Venue</dt><dd>To be confirmed by TPA</dd></div></dl><p class="form-note">This is an illustrative programme preview. Registration opens when the association confirms the event.</p><a class="button" href="https://tpassociation.org/events">See confirmed TPA events</a></div></dialog>
+</body>
+</html>

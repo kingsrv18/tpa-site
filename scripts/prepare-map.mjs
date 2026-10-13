@@ -1,0 +1,23 @@
+// Build an offline vector city map from the OpenStreetMap/Nominatim boundary.
+import fs from 'node:fs/promises';
+const source = new URL('../public/assets/kolkata-boundary.json', import.meta.url);
+const geometry = JSON.parse((await fs.readFile(source, 'utf8')).replace(/^\uFEFF/, ''));
+const polygons = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
+const coordinates = polygons.flat(2);
+const west = Math.min(...coordinates.map(point => point[0]));
+const east = Math.max(...coordinates.map(point => point[0]));
+const south = Math.min(...coordinates.map(point => point[1]));
+const north = Math.max(...coordinates.map(point => point[1]));
+const longitudeScale = Math.cos((south + north) / 2 * Math.PI / 180);
+const width = 440, height = 460, padding = 34;
+const scale = Math.min((width - padding * 2) / ((east - west) * longitudeScale), (height - padding * 2) / (north - south));
+const offsetX = (width - (east - west) * longitudeScale * scale) / 2;
+const offsetY = (height - (north - south) * scale) / 2;
+const project = ([longitude, latitude]) => [offsetX + (longitude - west) * longitudeScale * scale, offsetY + (north - latitude) * scale];
+const paths = polygons.map(polygon => polygon.map(ring => ring.map((point, index) => `${index ? 'L' : 'M'}${project(point).map(value => value.toFixed(1)).join(',')}`).join(' ') + ' Z').join(' '));
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}"><title>Kolkata city outline</title><desc>Geographic boundary from OpenStreetMap. Tollygunge is marked separately in the interactive atlas.</desc><g fill="#E5E6D5" stroke="#577A70" stroke-width="1.25" stroke-linejoin="round" fill-rule="evenodd">${paths.map(d => `<path d="${d}"/>`).join('')}</g></svg>`;
+await fs.writeFile(new URL('../public/assets/kolkata-map.svg', import.meta.url), svg);
+const tollygunge = { longitude: 88.3453908, latitude: 22.498636, source: 'https://www.openstreetmap.org/node/1350661689' };
+const pin = project([tollygunge.longitude, tollygunge.latitude]);
+await fs.writeFile(new URL('../public/assets/kolkata-map.json', import.meta.url), JSON.stringify({ source: 'https://www.openstreetmap.org/relation/9381363', attribution: '© OpenStreetMap contributors', tollygunge, pin: { x: pin[0] / width * 100, y: pin[1] / height * 100 } }, null, 2));
+console.log(`Prepared Kolkata outline; Tollygunge marker ${pin.map(value => value.toFixed(1)).join(', ')}`);
